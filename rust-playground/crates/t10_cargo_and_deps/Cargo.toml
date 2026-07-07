@@ -1,0 +1,34 @@
+# TODO(reader): this Cargo.toml *is* the lesson for this topic. Read every
+# line before opening WORKBOOK.md, and note anything that looks off to you.
+
+[package]
+name = "t10_cargo_and_deps"
+version = "0.1.0"
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+# A caret requirement (the default): allows any 1.x.y >= 1.0.0. This is
+# the normal, recommended way to depend on a semver-versioned crate.
+serde = { version = "1", features = ["derive"] }
+
+# A fully pinned patch version. Reasonable when you need an exact
+# reproducible build, but it means you won't get bugfix releases
+# automatically — someone has to bump this by hand.
+serde_json = "=1.0.128"
+
+# An unconstrained wildcard version. This is a smell: it accepts *any*
+# version of `once_cell`, including future breaking major versions,
+# with no upper bound at all.
+once_cell = "*"
+
+[dev-dependencies]
+# `dev-dependencies` are only compiled for tests/examples/benches, never
+# for a normal `cargo build --release` of the library/binary itself.
+serde_test = "1"
+
+[features]
+# A feature with no dependency behind it — legal, but if nothing in the
+# code actually checks `cfg(feature = "extra-logging")`, this feature does
+# nothing and just adds confusion for downstream users.
+extra-logging = []

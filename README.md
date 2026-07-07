@@ -20,8 +20,20 @@ prompt-library/
 ├── visual-explanation-prompts/
 ├── math-support-prompts/
 ├── experimental-ideas/
+├── rust-playground/
 └── README.md
 ```
+
+## 🦀 Rust Playground
+
+`rust-playground/` is a Cargo workspace for learning to *read* Rust code —
+especially Rust an LLM produced — rather than to write it from memory. It
+pairs thirteen small runnable topic crates under `crates/` with matching
+`WORKBOOK.md` lessons (ownership, error handling, traits, async, common
+LLM code smells, and more), plus an `inbox/` for dropping in real
+LLM-generated snippets to annotate over time. See
+[`rust-playground/README.md`](rust-playground/README.md) for the full
+curriculum and how to use it.
 
 ## ✨ Features
 
