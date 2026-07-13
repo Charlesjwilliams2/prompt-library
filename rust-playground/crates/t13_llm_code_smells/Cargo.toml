@@ -1,7 +1,0 @@
-[package]
-name = "t13_llm_code_smells"
-version = "0.1.0"
-edition.workspace = true
-publish.workspace = true
-
-[dependencies]

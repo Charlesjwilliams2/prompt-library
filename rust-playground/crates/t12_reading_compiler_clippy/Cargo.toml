@@ -1,7 +1,0 @@
-[package]
-name = "t12_reading_compiler_clippy"
-version = "0.1.0"
-edition.workspace = true
-publish.workspace = true
-
-[dependencies]
